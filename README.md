@@ -1,4 +1,5 @@
-# is-file-exist
+# Deprecated 
+## is-file-exist
 Check if a file exists 
 
 ## Install
