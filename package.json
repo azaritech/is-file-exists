@@ -1,0 +1,12 @@
+{
+  "name": "is-file-exist",
+  "version": "1.0.0",
+  "description": "Test if a file exist or not",
+  "main": "lib/index.js",
+  "repository": "git@github.com:azaritech/is-file-exist.git",
+  "author": "Azaritech",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/azaritech/is-file-exist/issues"
+  }
+}
