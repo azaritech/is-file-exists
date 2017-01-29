@@ -5,9 +5,9 @@ const path = '../package.json';
 //const path = Buffer.from('../package.json');
 //const path = '';
 
-const { isFileExistAsync, isFileExistSync } = require('../lib');
+const { isFileExistsAsync, isFileExistsSync } = require('../lib');
 
-isFileExistAsync(path, (valid, message) => {
+isFileExistsAsync(path, (valid, message) => {
   if (!valid) {
     console.log(`${valid} because ${message}`);
   } else {
@@ -15,13 +15,13 @@ isFileExistAsync(path, (valid, message) => {
   }
 });
 
-isFileExistAsync(path).then((p) => {
+isFileExistsAsync(path).then((p) => {
   console.log(p.valid);
 }).catch(p => {
   console.log(`${p.valid} because ${p.message}`);
 });
 
-const result = isFileExistSync(path);
+const result = isFileExistsSync(path);
 if (result && !result.valid) {
   console.log(`${result.valid} because ${result.message}`);
 } else {

@@ -1,30 +1,29 @@
-# Deprecated 
-## is-file-exist
+# is-file-exists
 Check if a file exists 
 
 ## Install
 ### With npm
 ```bash
-npm install is-file-exist
+npm install is-file-exists
 ``` 
 
 ### With yarn
 ```bash
-yarn add is-file-exist
+yarn add is-file-exists
 ``` 
 ## API
 
-### `isFileExistAsync(path, [callback])`
+### `isFileExistsAsync(path, [callback])`
 Check if a file exists, called asynchronously where:
 - `path` - a buffer or a string.
 - `callback` - an optional callback method when file checking is completed or failed with the
   signature `function(valid, message)` where:
-    - `valid` - a boolean value: true when the file exist and false if there is an error.
+    - `valid` - a boolean value: true when the file exists and false if there is an error.
     - `message` - a null value when valid is true and an object when valid is false.
 
 If no `callback` is provided, a `Promise` object is returned.
 
-### `isFileExistSync(path)`
+### `isFileExistsSync(path)`
 Check if a file exists, called synchronously where:
 - `path` - a buffer or a string
 
@@ -33,9 +32,9 @@ Check if a file exists, called synchronously where:
 
 ### Asynchronous and callback
 ```javascript
-const { isFileExistAsync } = require('is-file-exist');
+const { isFileExistsAsync } = require('is-file-exists');
 
-isFileExistAsync('./package.json', (valid, message) => {
+isFileExistsAsync('./package.json', (valid, message) => {
   if (!valid) {
     console.log(`${valid} because ${message}`);
   } else {
@@ -43,7 +42,7 @@ isFileExistAsync('./package.json', (valid, message) => {
   }
 });
 
-isFileExistAsync(Buffer.from('./package.json'), (valid, message) => {
+isFileExistsAsync(Buffer.from('./package.json'), (valid, message) => {
   if (!valid) {
     console.log(`${valid} because ${message}`);
   } else {
@@ -54,15 +53,15 @@ isFileExistAsync(Buffer.from('./package.json'), (valid, message) => {
 
 ### Asynchronous and promise
 ```javascript
-const { isFileExistAsync } = require('is-file-exist');
+const { isFileExistsAsync } = require('is-file-exists');
 
-isFileExistAsync('./package.json').then((p) => {
+isFileExistsAsync('./package.json').then((p) => {
   console.log(p.valid);
 }).catch(p => {
   console.log(`${p.valid} because ${p.message}`);
 });
 
-isFileExistAsync(Buffer.from('./package.json')).then((p) => {
+isFileExistsAsync(Buffer.from('./package.json')).then((p) => {
   console.log(p.valid);
 }).catch(p => {
   console.log(`${p.valid} because ${p.message}`);
@@ -71,16 +70,16 @@ isFileExistAsync(Buffer.from('./package.json')).then((p) => {
 
 ### Synchronous
 ```javascript
-const { isFileExistSync } = require('is-file-exist');
+const { isFileExistsSync } = require('is-file-exists');
 
-const resultA = isFileExistSync('./package.json');
+const resultA = isFileExistsSync('./package.json');
 if (resultA && !resultA.valid) {
   console.log(`${resultA.valid} because ${resultA.message}`);
 } else {
   console.log(resultA.valid);
 }
 
-const resultB = isFileExistSync(Buffer.from('./package.json'));
+const resultB = isFileExistsSync(Buffer.from('./package.json'));
 if (resultB && !resultB.valid) {
   console.log(`${resultB.valid} because ${resultB.message}`);
 } else {
