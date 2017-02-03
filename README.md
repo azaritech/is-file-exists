@@ -1,5 +1,7 @@
 # is-file-exists
-Check if a file exists 
+Check if a file exists  
+
+[![NPM](https://nodei.co/npm/is-file-exists.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/is-file-exists/)
 
 ## Install
 ### With npm
